@@ -2,7 +2,7 @@ import { Image } from "expo-image";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import image from './assets/image.png';
+import image from "./assets/image.png";
 
 export default function App() {
   return (
@@ -16,8 +16,26 @@ export default function App() {
         />
         <View>
           <Text style={styles.title}>The Octocat</Text>
-          <Text style={{marginVertical: 5}}>@octocat</Text>
+          <Text style={{ marginVertical: 5 }}>@octocat</Text>
           <Text>Joined 25 Jan 2024</Text>
+        </View>
+      </View>
+      <Text style={{ fontSize: 18 }}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ab porro
+        saepe ipsa, quia voluptatibus asperiores voluptas qui magni assumenda.
+      </Text>
+      <View style={styles.card}>
+        <View style={styles.cardContent}>
+          <Text style={styles.cardTitle}>Repos</Text>
+          <Text style={styles.cardBody}>8</Text>
+        </View>
+        <View style={styles.cardContent}>
+          <Text style={styles.cardTitle}>Followers</Text>
+          <Text style={styles.cardBody}>3938</Text>
+        </View>
+        <View style={styles.cardContent}>
+          <Text style={styles.cardTitle}>Following</Text>
+          <Text style={styles.cardBody}>9</Text>
         </View>
       </View>
       <StatusBar style="auto" />
@@ -30,6 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 20,
+    gap: 40,
   },
   image: {
     width: 80,
@@ -44,5 +63,26 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-  }
+  },
+  card: {
+    backgroundColor: "#f4f4f4",
+    padding: 20,
+    borderRadius: 10,
+    flexDirection: "row",
+    gap: 20,
+    justifyContent: "center",
+  },
+  cardContent: {
+    alignItems: "center",
+    gap: 10,
+  },
+  cardTitle: {
+    fontWeight: "bold",
+    fontSize: 18,
+    color: "gray",
+  },
+  cardBody: {
+    fontSize: 22,
+    fontWeight: "bold",
+  },
 });
